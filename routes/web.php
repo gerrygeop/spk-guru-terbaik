@@ -1,38 +1,49 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\{
+    AlternatifController,
+    KriteriaController,
+    ProfileController,
+    TopsisController,
+    UserController
+};
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+    return Inertia::render('Auth/Login', [
+        'status' => session('status'),
     ]);
-});
+})->middleware('guest');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::middleware('can:admin')->group(function () {
+        Route::get('/admin/dashboard', function () {
+            return Inertia::render('Admin/Dashboard');
+        })->name('admin.dashboard');
+
+        // Users
+        Route::resource('users', UserController::class)->except('create', 'store', 'destroy');
+
+        // Kriteria
+        Route::resource('kriteria', KriteriaController::class)->except('show')->parameters(['kriteria' => 'kriteria']);
+    });
+
+    // Alternatif
+    Route::resource('alternatif', AlternatifController::class)->except('show');
+
+    // TOPSIS
+    Route::get('topsis', [TopsisController::class, 'topsis'])->name('topsis');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
