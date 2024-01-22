@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +12,144 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'role' => 'admin',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('kriteria')->insert([
+            [
+                'nama' => 'Pedagogik',
+                'bobot' => floatval('25'),
+            ],
+            [
+                'nama' => 'Kepribadian',
+                'bobot' => floatval('20'),
+            ],
+            [
+                'nama' => 'Sosial',
+                'bobot' => floatval('20'),
+            ],
+            [
+                'nama' => 'Kedisiplinan',
+                'bobot' => floatval('15'),
+            ],
+            [
+                'nama' => 'Profesional',
+                'bobot' => floatval('20'),
+            ],
+        ]);
+
+        DB::table('sub_kriteria')->insert([
+            // Pedagogik
+            [
+                'kriteria_id' => 1,
+                'nama' => 'Sangat Baik',
+                'bobot' => 1,
+            ],
+            [
+                'kriteria_id' => 1,
+                'nama' => 'Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 1,
+                'nama' => 'Cukup Baik',
+                'bobot' => 3,
+            ],
+            [
+                'kriteria_id' => 1,
+                'nama' => 'Kurang Baik',
+                'bobot' => 4,
+            ],
+
+            // Kepribadian
+            [
+                'kriteria_id' => 2,
+                'nama' => 'Sangat Baik',
+                'bobot' => 1,
+            ],
+            [
+                'kriteria_id' => 2,
+                'nama' => 'Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 2,
+                'nama' => 'Cukup Baik',
+                'bobot' => 3,
+            ],
+            [
+                'kriteria_id' => 2,
+                'nama' => 'Kurang Baik',
+                'bobot' => 4,
+            ],
+
+            // Sosial
+            [
+                'kriteria_id' => 3,
+                'nama' => 'Sangat Baik',
+                'bobot' => 1,
+            ],
+            [
+                'kriteria_id' => 3,
+                'nama' => 'Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 3,
+                'nama' => 'Cukup Baik',
+                'bobot' => 3,
+            ],
+            [
+                'kriteria_id' => 3,
+                'nama' => 'Kurang Baik',
+                'bobot' => 4,
+            ],
+
+            // Kedisiplinan
+            [
+                'kriteria_id' => 4,
+                'nama' => 'Sangat Baik',
+                'bobot' => 1,
+            ],
+            [
+                'kriteria_id' => 4,
+                'nama' => 'Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 4,
+                'nama' => 'Cukup Baik',
+                'bobot' => 3,
+            ],
+            [
+                'kriteria_id' => 4,
+                'nama' => 'Kurang Baik',
+                'bobot' => 4,
+            ],
+
+            // Profesional
+            [
+                'kriteria_id' => 5,
+                'nama' => 'Sangat Baik',
+                'bobot' => 1,
+            ],
+            [
+                'kriteria_id' => 5,
+                'nama' => 'Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 5,
+                'nama' => 'Cukup Baik',
+                'bobot' => 3,
+            ],
+            [
+                'kriteria_id' => 5,
+                'nama' => 'Kurang Baik',
+                'bobot' => 4,
+            ],
+        ]);
     }
 }
