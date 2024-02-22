@@ -1,0 +1,1 @@
+import{j as s}from"./app-ktjZw_DP.js";function t({children:r,className:e,...o}){return s.jsx("select",{...o,className:`border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-md shadow-sm ${e}`,children:r})}export{t as S};
