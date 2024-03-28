@@ -12,7 +12,7 @@ class Kriteria extends Model
     use HasFactory;
 
     protected $table = 'kriteria';
-    protected $guaded = ['id'];
+    protected $guarded = ['id'];
     protected $with = ['subKriteria'];
 
     public function subKriteria(): HasMany
