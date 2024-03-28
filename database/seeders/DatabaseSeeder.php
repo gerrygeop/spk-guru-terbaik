@@ -45,110 +45,110 @@ class DatabaseSeeder extends Seeder
             [
                 'kriteria_id' => 1,
                 'nama' => 'Sangat Baik',
-                'bobot' => 1,
+                'bobot' => 4,
             ],
             [
                 'kriteria_id' => 1,
                 'nama' => 'Baik',
-                'bobot' => 2,
-            ],
-            [
-                'kriteria_id' => 1,
-                'nama' => 'Cukup Baik',
                 'bobot' => 3,
             ],
             [
                 'kriteria_id' => 1,
+                'nama' => 'Cukup Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 1,
                 'nama' => 'Kurang Baik',
-                'bobot' => 4,
+                'bobot' => 1,
             ],
 
             // Kepribadian
             [
                 'kriteria_id' => 2,
                 'nama' => 'Sangat Baik',
-                'bobot' => 1,
+                'bobot' => 4,
             ],
             [
                 'kriteria_id' => 2,
                 'nama' => 'Baik',
-                'bobot' => 2,
-            ],
-            [
-                'kriteria_id' => 2,
-                'nama' => 'Cukup Baik',
                 'bobot' => 3,
             ],
             [
                 'kriteria_id' => 2,
+                'nama' => 'Cukup Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 2,
                 'nama' => 'Kurang Baik',
-                'bobot' => 4,
+                'bobot' => 1,
             ],
 
             // Sosial
             [
                 'kriteria_id' => 3,
                 'nama' => 'Sangat Baik',
-                'bobot' => 1,
+                'bobot' => 4,
             ],
             [
                 'kriteria_id' => 3,
                 'nama' => 'Baik',
-                'bobot' => 2,
-            ],
-            [
-                'kriteria_id' => 3,
-                'nama' => 'Cukup Baik',
                 'bobot' => 3,
             ],
             [
                 'kriteria_id' => 3,
+                'nama' => 'Cukup Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 3,
                 'nama' => 'Kurang Baik',
-                'bobot' => 4,
+                'bobot' => 1,
             ],
 
             // Kedisiplinan
             [
                 'kriteria_id' => 4,
                 'nama' => 'Sangat Baik',
-                'bobot' => 1,
+                'bobot' => 4,
             ],
             [
                 'kriteria_id' => 4,
                 'nama' => 'Baik',
-                'bobot' => 2,
-            ],
-            [
-                'kriteria_id' => 4,
-                'nama' => 'Cukup Baik',
                 'bobot' => 3,
             ],
             [
                 'kriteria_id' => 4,
+                'nama' => 'Cukup Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 4,
                 'nama' => 'Kurang Baik',
-                'bobot' => 4,
+                'bobot' => 1,
             ],
 
             // Profesional
             [
                 'kriteria_id' => 5,
                 'nama' => 'Sangat Baik',
-                'bobot' => 1,
+                'bobot' => 4,
             ],
             [
                 'kriteria_id' => 5,
                 'nama' => 'Baik',
-                'bobot' => 2,
-            ],
-            [
-                'kriteria_id' => 5,
-                'nama' => 'Cukup Baik',
                 'bobot' => 3,
             ],
             [
                 'kriteria_id' => 5,
+                'nama' => 'Cukup Baik',
+                'bobot' => 2,
+            ],
+            [
+                'kriteria_id' => 5,
                 'nama' => 'Kurang Baik',
-                'bobot' => 4,
+                'bobot' => 1,
             ],
         ]);
     }
