@@ -130,16 +130,23 @@ export default function Navbar() {
                                 Dashboard
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
-                                href={route("alternatif.index")}
-                                active={route().current("alternatif.*")}
+                                href={route("users.index")}
+                                active={route().current("users.*")}
                             >
-                                Alternatif
+                                Users
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 href={route("kriteria.index")}
                                 active={route().current("kriteria.*")}
                             >
                                 Kriteria
+                            </ResponsiveNavLink>
+
+                            <ResponsiveNavLink
+                                href={route("alternatif.index")}
+                                active={route().current("alternatif.*")}
+                            >
+                                Alternatif
                             </ResponsiveNavLink>
                         </>
                     ) : (

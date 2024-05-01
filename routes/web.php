@@ -37,10 +37,10 @@ Route::middleware('auth')->group(function () {
 
         // Kriteria
         Route::resource('kriteria', KriteriaController::class)->except('show')->parameters(['kriteria' => 'kriteria']);
-    });
 
-    // Alternatif
-    Route::resource('alternatif', AlternatifController::class)->except('show');
+        // Alternatif
+        Route::resource('alternatif', AlternatifController::class)->except('show');
+    });
 
     // TOPSIS
     Route::get('topsis', [TopsisController::class, 'topsis'])->name('topsis');
